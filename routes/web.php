@@ -27,7 +27,7 @@ $router->get('/calcular/{edad}',function($edad){
     } else if ($edad >= 18 && $edad <= 100){
         return 'Eres mayor de edad';
     } else {
-        return 'Edad erronea';
+        return 'Where age';
     }
 });
 
