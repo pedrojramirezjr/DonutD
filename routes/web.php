@@ -17,8 +17,18 @@ $router->get('/hello there', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/hola',function(){
-    return 'hola mi nombre es pedro';
+$router->get('/saludo/{nombre}',function($nombre){
+    return 'hola mi nombre es ' .$nombre;
+});
+
+$router->get('/calcular/{edad}',function($edad){
+    if($edad > 0 && $edad < 16){
+        return 'Eres menor de edad';
+    } else if ($edad >= 18 && $edad <= 100){
+        return 'Eres mayor de edad';
+    } else {
+        return 'Edad erronea';
+    }
 });
 
 $router->post('/saludo',function(){
