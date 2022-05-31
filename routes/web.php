@@ -21,15 +21,7 @@ $router->get('/saludo/{nombre}',function($nombre){
     return 'hola mi nombre es ' .$nombre;
 });
 
-$router->get('/calcular/{edad}',function($edad){
-    if($edad > 0 && $edad < 16){
-        return 'Eres menor de edad';
-    } else if ($edad >= 18 && $edad <= 100){
-        return 'Eres mayor de edad';
-    } else {
-        return 'Where age';
-    }
-});
+$router->get('/calcular/{edad}', 'CalcularEdadController@calcularEdad');
 
 $router->post('/saludo',function(){
     return 'Hola estoy creando un saludo';
